@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+        <title>{{ page.title }} - jaimeMF</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+    </head>
+    <body>
+        <div id="main">
+            <nav id="navbar">
+                <h1>Navigation</h1>
+                <a href="{{url_for('page', path='index.html')}}">Home</a>
+                <a href="{{url_for('page', path='/contact.html')}}">Contact</a>
+            </nav>
+
+
+            <div id="content">
+                {{ page.html|safe }}
+            </div>
+
+            <footer id="footer">
+                Built with <a href="https://github.com/SimonSapin/Frozen-Flask">Frozen-Flask</a> and <a href="https://github.com/SimonSapin/Flask-FlatPages">Flask-FlatPages</a>
+            </footer>
+
+      </div>
+    </body>
+</html>

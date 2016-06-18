@@ -2,7 +2,7 @@
 
 make build
 
-cp -rf _site/* gh-pages
+cp -rf build/* gh-pages
 (
 
     date=$(date -u "+%Y-%m-%d %H:%M UTC")

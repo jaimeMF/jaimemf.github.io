@@ -1,13 +1,10 @@
-PROG=./site
-site: site.hs
-	ghc --make $^ -package-db $(wildcard ./.cabal-sandbox/*packages.conf.d)
+WEBSITE = source VENV/bin/activate; python website.py
 
+build:
+	$(WEBSITE) build
 
-build: site
-	./site build
+serve:
+	$(WEBSITE)
 
-watch: site
-	./site watch
-
-clean: site
-	./site clean
+clean:
+	rm -r build

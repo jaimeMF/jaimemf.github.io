@@ -1,11 +1,4 @@
-site
-*.hi
-*.o
-
-.cabal-sandbox
-cabal.sandbox.config
-
-_cache
-_site
+VENV
+build
 gh-pages
 
