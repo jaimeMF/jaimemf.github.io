@@ -4,6 +4,9 @@
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
         <title>{{ page.title }} - jaimeMF</title>
         <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+        {% if config.get('ANAYLITICS') %}
+            {% include "analytics.html" %}
+        {% endif %}
     </head>
     <body>
         <div id="main">
