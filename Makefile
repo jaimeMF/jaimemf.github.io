@@ -1,5 +1,7 @@
 WEBSITE = source VENV/bin/activate; python website.py
 
+.PHONY: build clean
+
 build:
 	$(WEBSITE) build
 
