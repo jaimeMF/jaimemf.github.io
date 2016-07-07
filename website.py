@@ -5,8 +5,11 @@ import subprocess
 from flask import Flask, render_template, render_template_string, redirect, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+Bootstrap(app)
+app.config['BOOTSTRAP_SERVE_LOCAL'] = True
 app.config['FLATPAGES_EXTENSION'] = '.md'
 pages = FlatPages(app)
 freezer = Freezer(app)
@@ -22,7 +25,7 @@ def page(path=None):
     path = os.path.splitext(path)[0]
     page = pages.get_or_404(path)
     page.body = render_template_string(page.body)
-    return render_template('default.html', page=page)
+    return render_template('default.html', page=page, pages=list(sorted(pages, key=lambda p: (0 if p.path=="index" else 1, p.path))))
 
 @app.route('/keys/<string:key>.asc')
 def key(key):
