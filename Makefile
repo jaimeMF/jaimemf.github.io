@@ -1,6 +1,8 @@
 WEBSITE = source VENV/bin/activate; python website.py
 
-.PHONY: build clean
+NEOCITIES_BIN = bundle exec neocities
+
+.PHONY: build clean neocities-push
 
 build:
 	$(WEBSITE) build
@@ -10,3 +12,6 @@ serve:
 
 clean:
 	rm -r build
+
+neocities-push:
+	$(NEOCITIES_BIN) push build
