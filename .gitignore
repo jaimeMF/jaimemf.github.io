@@ -3,4 +3,3 @@ build
 gh-pages
 .bundle
 vendor/bundle/ruby
-
